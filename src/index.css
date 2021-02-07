@@ -38,3 +38,16 @@
    background: none;
    color: #000 !important;
  }
+
+
+ /* Footer */
+ .footer {
+   background-color: rgb(51, 50, 50);
+   color: #fff;
+   height: 60px;
+   line-height: 20px;
+   margin-top: 200px;
+   padding: 20px 0px 0px 0px;
+   text-align: center;
+   font-size: 10px;
+ }

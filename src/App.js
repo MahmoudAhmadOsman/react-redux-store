@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Filter from "./components/Filter";
+import Footer from "./components/Footer";
 
 import NavBar from "./components/NavBar";
 import Products from "./components/Products";
@@ -100,6 +101,7 @@ class App extends React.Component {
             </div>
           </div>
         </section>
+        <Footer />
       </Router>
     );
   }
