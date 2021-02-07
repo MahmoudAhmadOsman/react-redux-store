@@ -53,13 +53,6 @@ const NavBar = () => {
                 <Link className="dropdown-item" to="#">
                   Login
                 </Link>
-                {/* <a className="dropdown-item" to="#">
-                  Another action
-                </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" to="#">
-                  Something else here
-                </a> */}
               </div>
             </li>
           </ul>

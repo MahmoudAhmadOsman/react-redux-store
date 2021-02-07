@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Mens Sleeve Shirts",
-      "description": " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat exercitationem, recusandae cumque culpa at sint.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. ",
       "availableSizes": [
         "X",
         "L",
@@ -17,7 +17,7 @@
     {
       "id": 2,
       "title": "Pants",
-      "description": " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat exercitationem, recusandae cumque culpa at sint.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. ",
       "availableSizes": [
         "X",
         "L",
@@ -31,7 +31,7 @@
     {
       "id": 3,
       "title": "Atlas Hooded Jacket",
-      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
         "X",
         "L",
@@ -45,7 +45,7 @@
     {
       "id": 4,
       "title": "Skirt",
-      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.  ",
       "availableSizes": [
         "X",
         "L",
@@ -59,7 +59,7 @@
     {
       "id": 5,
       "title": "Dell Computer",
-      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
         "L"
       ],
@@ -69,7 +69,7 @@
     {
       "id": 6,
       "title": "Dell Laptop",
-      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. ",
       "availableSizes": [
         "M"
       ],
@@ -79,7 +79,7 @@
     {
       "id": 7,
       "title": "Nike Sports Shoes",
-      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
         "M",
         "S"
@@ -90,12 +90,32 @@
     {
       "id": 8,
       "title": "iPhone",
-      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.",
       "availableSizes": [
-        "11 S"
+        "M"
       ],
       "price": 579.95,
       "image": "https://source.unsplash.com/1600x900/?phone11"
+    },
+    {
+      "id": 9,
+      "title": "JavaScript",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
+      "availableSizes": [
+        "S"
+      ],
+      "price": 86.95,
+      "image": "https://source.unsplash.com/1600x900/?javascript"
+    },
+    {
+      "id": 10,
+      "title": "Reac js",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
+      "availableSizes": [
+        "S"
+      ],
+      "price": 106.95,
+      "image": "https://source.unsplash.com/1600x900/?javascript"
     }
   ]
 }
