@@ -1,4 +1,4 @@
- *{
+ * {
    margin: 0px;
    padding: 0px;
    box-sizing: border-box;
@@ -6,4 +6,35 @@
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
    -o-box-sizing: border-box;
+ }
+
+ body {
+   height: 1500px;
+ }
+
+ /* Navbar links */
+ .nav-item {
+   color: #fff;
+   font-size: 20px;
+ }
+
+ .navbar-dark .navbar-nav .nav-link {
+   color: #fff;
+ }
+
+ .navbar-right li a {
+   color: #fff;
+ }
+
+ /* Front page */
+ .front-page {
+   margin-top: 1px;
+ }
+
+
+ /* All Product page */
+ .all_products .btn-secondary {
+   /* border-color:transparent; */
+   background: none;
+   color: #000 !important;
  }

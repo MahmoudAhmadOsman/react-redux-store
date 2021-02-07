@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 const NavBar = () => {
   return (
     <section classNameName="main-navigation">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-info">
         <Link className="navbar-brand" to="/">
           Redux Shopping Cart
         </Link>
@@ -23,12 +22,18 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/">
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
                 Contact
               </Link>
             </li>
@@ -58,8 +63,18 @@ const NavBar = () => {
               </div>
             </li>
           </ul>
+
           <div className="my-2 my-lg-0">
-            <Link to="#">Admin</Link>
+            <ul class="nav navbar-nav navbar-right ">
+              <li>
+                <Link to="#" className="mr-2">
+                  Register
+                </Link>
+              </li>
+              <li>
+                <Link to="#">Login</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

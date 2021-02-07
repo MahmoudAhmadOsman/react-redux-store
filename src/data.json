@@ -1,0 +1,101 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Mens Sleeve Shirts",
+      "description": " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat exercitationem, recusandae cumque culpa at sint.",
+      "availableSizes": [
+        "X",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "price": 27.34,
+      "image": "https://source.unsplash.com/1600x900/?shirt"
+    },
+    {
+      "id": 2,
+      "title": "Pants",
+      "description": " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat exercitationem, recusandae cumque culpa at sint.",
+      "availableSizes": [
+        "X",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "price": 65.87,
+      "image": "https://source.unsplash.com/1600x900/?pant"
+    },
+    {
+      "id": 3,
+      "title": "Atlas Hooded Jacket",
+      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "availableSizes": [
+        "X",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "price": 85.94,
+      "image": "https://source.unsplash.com/1600x900/?jaket"
+    },
+    {
+      "id": 4,
+      "title": "Skirt",
+      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "availableSizes": [
+        "X",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "price": 26.13,
+      "image": "https://source.unsplash.com/1600x900/?skirt"
+    },
+    {
+      "id": 5,
+      "title": "Dell Computer",
+      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "availableSizes": [
+        "L"
+      ],
+      "price": 599.99,
+      "image": "https://source.unsplash.com/1600x900/?dell"
+    },
+    {
+      "id": 6,
+      "title": "Dell Laptop",
+      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "availableSizes": [
+        "M"
+      ],
+      "price": 699.95,
+      "image": "https://source.unsplash.com/1600x900/?dell"
+    },
+    {
+      "id": 7,
+      "title": "Nike Sports Shoes",
+      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "availableSizes": [
+        "M",
+        "S"
+      ],
+      "price": 79.95,
+      "image": "https://source.unsplash.com/1600x900/?nike"
+    },
+    {
+      "id": 8,
+      "title": "iPhone",
+      "description": "Retained (old) magnetic fb in vitreous body, left eye",
+      "availableSizes": [
+        "11 S"
+      ],
+      "price": 579.95,
+      "image": "https://source.unsplash.com/1600x900/?phone11"
+    }
+  ]
+}
