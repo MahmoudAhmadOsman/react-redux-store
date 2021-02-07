@@ -20,7 +20,8 @@ class Products extends Component {
                 </Link>
                 <div className="card-body">
                   <h4 className="card-title">
-                    {product.title} &nbsp; <span className="text-muted">|</span>
+                    {product.title} &nbsp;
+                    {/* <span className="text-muted"></span> */}
                     &nbsp;
                     {/* <b className="text-danger">${product.price}</b> */}
                   </h4>
