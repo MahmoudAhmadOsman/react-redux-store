@@ -7,7 +7,7 @@ class Filter extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <p className="form-control">
+              <div className="form-control">
                 <b># of Products:</b> &nbsp;
                 <b className="text-danger"> {this.props.count}</b> &nbsp; &nbsp;
                 <b>Order:</b> &nbsp;
@@ -34,7 +34,7 @@ class Filter extends Component {
                   <option value="L">L</option>
                   <option value="XXL">XXL</option>
                 </select>
-              </p>
+              </div>
             </div>
           </div>
         </div>

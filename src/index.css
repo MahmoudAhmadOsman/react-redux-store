@@ -40,6 +40,21 @@
  }
 
 
+
+ /* filter-component style */
+ .filter-component {
+   margin-bottom: 20px;
+ }
+
+ @media(max-width:768px) {
+   .filter-component {
+     margin-bottom: 100px;
+   }
+ }
+
+
+
+
  /* Footer */
  .footer {
    background-color: rgb(51, 50, 50);
