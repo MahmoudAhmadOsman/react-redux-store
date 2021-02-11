@@ -48,11 +48,39 @@
 
 
 
+ /* Start of Cart item style */
+ .cart-items {
+   position: relative;
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: column;
+   float: right;
+ }
 
+ .cart-items img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50px;
+   display: flex;
+   float: left;
 
+ }
 
+ .cart-items .item-title {
+   display: flex;
+ }
 
+ @media(max-width: 768px) {
+   .cart-items {
+     width: 100%;
+     position: relative;
+     display: block;
 
+   }
+
+ }
+
+ /* End of Cart item style */
 
 
 

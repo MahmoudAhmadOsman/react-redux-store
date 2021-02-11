@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Products extends Component {
-  addToCart = () => {
-    alert("Working on it!!!");
-  };
-
   render() {
     const productTitles = "Products";
     return (
@@ -39,7 +35,7 @@ class Products extends Component {
                     <Link
                       to={"#" + product.id}
                       className="btn btn-outline-warning btn-lg font-weight-bold"
-                      onClick={this.addToCart}
+                      onClick={() => this.props.addToCart(product)}
                     >
                       Add to Cart
                     </Link>
@@ -47,9 +43,6 @@ class Products extends Component {
                 </div>
               </div>
             ))}
-            {/* <div className="col-md-2">
-              <h1>Right col</h1>
-            </div> */}
           </div>
         </div>
       </section>

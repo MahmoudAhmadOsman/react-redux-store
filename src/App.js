@@ -2,6 +2,7 @@ import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/About";
+import Cart from "./components/Cart";
 import Contact from "./components/Contact";
 import Filter from "./components/Filter";
 import Footer from "./components/Footer";
@@ -15,10 +16,48 @@ class App extends React.Component {
     super();
     this.state = {
       products: data.products,
+      cartItems: [],
       size: "",
       sort: "",
     };
   }
+
+  //Remove Items from the lsit
+  removeFromCart = (product) => {
+    alert("Are you sure you want to remove this item?");
+    //1, create an instance of cart item
+    const cartItems = this.state.cartItems.slice();
+    //2. then filter items based on id inside setState
+    this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) });
+    //3. pass this func to the Cart as a props
+  };
+
+  //AddToCart function on btn
+  addToCart = (product) => {
+    // alert("You added an item!!");
+    //Create clone of cart items
+    const cartItems = this.state.cartItems.slice();
+
+    //Already in cart or not
+    let alreadyInCart = false;
+
+    //Loop though cart items using forEach func
+    cartItems.forEach((item) => {
+      //Check item
+      if (item.id === product.id) {
+        item.count++; // if item already exists, then increment by 1
+        alreadyInCart = true;
+      }
+    });
+
+    //If not in the Cart
+    if (!alreadyInCart) {
+      cartItems.push({ ...product, count: 1 });
+    }
+
+    //Now set the state
+    this.setState({ cartItems });
+  };
 
   //filterProducts function
   filterProducts = (event) => {
@@ -95,7 +134,23 @@ class App extends React.Component {
                 sortProducts={this.sortProducts}
               ></Filter>
             </div>
-            <Products products={this.state.products}></Products>
+            {/* Start of Cart Component */}
+            <div className="alert">
+              {/* Pass cartItems to the cart component as props */}
+              <Cart
+                cartItems={this.state.cartItems}
+                removeFromCart={this.removeFromCart}
+              />
+            </div>
+            {/* End of Cart Component */}
+
+            {/* Start of Product Component */}
+            <Products
+              products={this.state.products}
+              addToCart={this.addToCart}
+            ></Products>
+
+            {/* End of Product Component */}
           </div>
         </section>
         <Footer />
