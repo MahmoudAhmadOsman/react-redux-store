@@ -56,9 +56,16 @@
    flex-direction: column;
    float: right;
  }
-.cart-items  .badge-danger{
-  border-radius: 50px;
-}
+
+ .cart-items .badge-danger {
+   border-radius: 50px;
+   border-radius: 50px;
+   font-size: 11px;
+   margin-top: 4px;
+   position: absolute;
+   margin-left: -4px;
+ }
+
  .cart-items img {
    width: 30px;
    height: 30px;

@@ -17,9 +17,12 @@ export class Cart extends Component {
           ) : (
             <div className="container p-2">
               <h4>
-                You have{" "}
+                {/* You have{" "}
                 <b className="badge badge-danger">{cartItems.length}</b> items
-                in your cart.
+                in your cart. */}
+                <i class="fa fa-cart-plus fa-2x " aria-hidden="true"></i>
+
+                <b className="badge badge-danger">{cartItems.length}</b>
               </h4>
             </div>
           )}
