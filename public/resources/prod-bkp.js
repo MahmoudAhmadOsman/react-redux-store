@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 class Products extends Component {
   render() {
-    const productTitles = "Products";
+    const productTitles = "List of Avaialable Products";
     return (
       <section className="all_products">
         <div className="container">
-          <h1 className="text-info">{productTitles}</h1> <hr /> <br />
+          <h1 className="text-info">{productTitles}</h1> <hr />
           <div className="row">
             {this.props.products.map((product) => (
               <div className="col-md-4">
@@ -33,7 +33,7 @@ class Products extends Component {
                     </button>
 
                     <Link
-                      to={"#" + product.id}
+                      to="#"
                       className="btn btn-outline-warning btn-lg font-weight-bold"
                     >
                       Add to Cart
@@ -42,9 +42,6 @@ class Products extends Component {
                 </div>
               </div>
             ))}
-            {/* <div className="col-md-2">
-              <h1>Right col</h1>
-            </div> */}
           </div>
         </div>
       </section>

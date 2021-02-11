@@ -27,11 +27,11 @@ const NavBar = () => {
               </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About
               </Link>
-            </li>
+              </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">
                 Contact
@@ -48,13 +48,13 @@ const NavBar = () => {
                 aria-expanded="false"
               >
                 Admin
-              </Link>
+              </Link> 
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link className="dropdown-item" to="#">
                   Login
                 </Link>
               </div>
-            </li>
+            </li>*/}
           </ul>
 
           <div className="my-2 my-lg-0">

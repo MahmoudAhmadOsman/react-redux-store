@@ -8,11 +8,11 @@ class Filter extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="form-control">
-                <b># of Products:</b> &nbsp;
-                <b className="text-danger"> {this.props.count}</b> &nbsp; &nbsp;
-                <b>Order:</b> &nbsp;
+                {/* <b># of Products:</b> &nbsp;
+                <b className="text-danger"> {this.props.count}</b> &nbsp; &nbsp; */}
+                <b>Sort by price:</b> &nbsp;
                 <select
-                  className=" col-sm-2"
+                  className="col-sm-2"
                   value={this.props.size}
                   onChange={this.props.sortProducts}
                 >
@@ -22,9 +22,9 @@ class Filter extends Component {
                   <option value="highest">Highest</option>
                 </select>
                 &nbsp; &nbsp;
-                <b>Filter</b> :&nbsp; &nbsp;
+                <b>Filter by Size</b> :&nbsp; &nbsp;
                 <select
-                  className=" col-sm-2"
+                  className=" col-sm-1"
                   value={this.props.size}
                   onChange={this.props.filterProducts}
                 >
