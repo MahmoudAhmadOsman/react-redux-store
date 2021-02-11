@@ -7,8 +7,8 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-12">
             <p>
-              &copy; Copyright 2021. Allright Reserved . Design & Developed by
-              Mahmoud Osman{" "}
+              &copy; Copyright 2021. Allright Reserved . Designed & Developed by
+              Mahmoud Osman
             </p>
           </div>
         </div>
