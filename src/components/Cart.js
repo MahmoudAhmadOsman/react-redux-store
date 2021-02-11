@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import formatCurrency from "../utils/util";
 
 export class Cart extends Component {
   render() {
@@ -17,8 +18,8 @@ export class Cart extends Component {
             <div className="container p-2">
               <h4>
                 You have{" "}
-                <b className="badge badge-danger">{cartItems.length}</b> in your
-                cart.
+                <b className="badge badge-danger">{cartItems.length}</b> items
+                in your cart.
               </h4>
             </div>
           )}
@@ -36,7 +37,10 @@ export class Cart extends Component {
                   </div>
 
                   <div className="item-price">
-                    <small className="text-muted ml-1">${item.price}</small>
+                    <small className="text-muted ml-1">
+                      {/* ${item.price} */}
+                      {formatCurrency(item.price)}
+                    </small>
                     <small>&nbsp;X &nbsp; {item.count} </small>
                   </div>
                   <button

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import formatCurrency from "../utils/util";
 
 class Products extends Component {
   render() {
@@ -29,7 +30,7 @@ class Products extends Component {
                     <hr />
                     <p className="card-text">{product.description}</p>
                     <button className="disabled btn btn-secondary btn-lg mr-2 font-weight-bold">
-                      ${product.price}
+                      {formatCurrency(product.price)}
                     </button>
 
                     <Link
