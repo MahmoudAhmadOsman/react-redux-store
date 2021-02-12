@@ -16,7 +16,11 @@ class App extends React.Component {
     super();
     this.state = {
       products: data.products,
-      cartItems: [],
+      // cartItems: [],
+      //2.Prevent lossing items after page is refreshed by using local storage
+      cartItems: localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : [],
       size: "",
       sort: "",
     };
@@ -28,8 +32,10 @@ class App extends React.Component {
     //1, create an instance of cart item
     const cartItems = this.state.cartItems.slice();
     //2. then filter items based on id inside setState
-    this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) });
     //3. pass this func to the Cart as a props
+    this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) });
+    //2.Prevent lossing items after page is refreshed by using local storage
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   //AddToCart function on btn
@@ -54,9 +60,10 @@ class App extends React.Component {
     if (!alreadyInCart) {
       cartItems.push({ ...product, count: 1 });
     }
-
     //Now set the state
     this.setState({ cartItems });
+    //1.Prevent lossing items after page is refreshed by using local storage
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   //filterProducts function
