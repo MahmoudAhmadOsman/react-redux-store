@@ -35,7 +35,10 @@ class App extends React.Component {
     //3. pass this func to the Cart as a props
     this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) });
     //2.Prevent lossing items after page is refreshed by using local storage
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem(
+      "cartItems",
+      JSON.stringify(cartItems.filter((x) => x.id !== product.id))
+    );
   };
 
   //AddToCart function on btn
