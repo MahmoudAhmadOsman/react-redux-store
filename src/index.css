@@ -110,7 +110,14 @@
  }
 
 
+ /* Checkout form container */
 
+ .checkout-form-container{
+   position: relative;
+ }
+ .checkout-form-container label{
+   font-weight: bold;
+ }
 
  /* Footer */
  .footer {

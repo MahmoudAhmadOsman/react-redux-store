@@ -26,6 +26,12 @@ class App extends React.Component {
     };
   }
 
+  //createOrder method from Cart.js component
+  createOrder = (order) => {
+    alert(order.name + " " + order.email + " " + order.address);
+    console.log(order);
+  };
+
   //Remove Items from the lsit
   removeFromCart = (product) => {
     alert("Are you sure you want to remove this item?");
@@ -150,6 +156,7 @@ class App extends React.Component {
               <Cart
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
+                createOrder={this.createOrder}
               />
             </div>
             {/* End of Cart Component */}

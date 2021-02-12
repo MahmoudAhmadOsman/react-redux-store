@@ -2,6 +2,38 @@ import React, { Component } from "react";
 import formatCurrency from "../utils/util";
 
 export class Cart extends Component {
+  constructor(props) {
+    super();
+    //Initially set the state to false
+    this.state = {
+      name: "",
+      email: "",
+      address: "",
+      showCheckout: false,
+    };
+  }
+
+  // handleInput function that handles the form
+  handleInput = (e) => {
+    //Get the form value
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  //createOrder - when form is submitted
+  createOrder = (e) => {
+    // alert("Form sumitteed");
+    e.preventDefault();
+    //Now create order objects
+    const order = {
+      name: this.state.name,
+      email: this.state.email,
+      address: this.state.address,
+      cartItems: this.props.cartItems, // include cart items here
+    };
+    //Now save the order and pass this info to the parent component which is App.js
+    this.props.createOrder(order);
+  };
+
   render() {
     //1st, Get the props
     const { cartItems } = this.props;
@@ -67,10 +99,62 @@ export class Cart extends Component {
                   </h5>
                   <hr />{" "}
                   <div className="proceed mt-4">
-                    <button className="btn btn-warning btn-lg btn-block font-weight-bold">
+                    <button
+                      onClick={() => {
+                        this.setState({ showCheckout: true });
+                      }}
+                      className="btn btn-warning btn-lg btn-block font-weight-bold"
+                    >
                       Proceed
                     </button>
                   </div>
+                  {/* Start of showing the checkout form */}
+                  {this.state.showCheckout && (
+                    <div className="checkout-form-container mt-4">
+                      <hr />
+                      <h3 className="text-primary">Checkout</h3>
+                      <form onSubmit={this.createOrder}>
+                        <div class="form-group">
+                          <label htmlFor="name">Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            className="form-control"
+                            required
+                            onChange={this.handleInput}
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label htmlFor="email">Email</label>
+                          <input
+                            type="email"
+                            name="email"
+                            className="form-control"
+                            required
+                            onChange={this.handleInput}
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label htmlFor="address">Address</label>
+                          <input
+                            type="text"
+                            name="address"
+                            className="form-control"
+                            required
+                            onChange={this.handleInput}
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          class="btn btn-outline-primary btn-md"
+                        >
+                          Submit
+                        </button>
+                      </form>
+                    </div>
+                  )}
+                  {/* End of showing the checkout form */}
                 </div>
               )}
               {/* End of total div */}
