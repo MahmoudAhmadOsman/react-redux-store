@@ -101,7 +101,7 @@ class Products extends Component {
                             {product.availableSizes.map((closeTheModal) => (
                               <span>
                                 <button
-                                  className="btn btn-dark ml-2 mr-2"
+                                  className="btn btn-dark btn-sm ml-2 mr-2"
                                   disabled
                                 >
                                   {closeTheModal}
