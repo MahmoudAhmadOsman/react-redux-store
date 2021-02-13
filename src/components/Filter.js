@@ -17,17 +17,19 @@ class Filter extends Component {
                   onChange={this.props.sortProducts}
                 >
                   &nbsp;
-                  <option>Latest</option>
+                  <option disabled>Select one</option>
+                  <option>Lowest</option>
                   <option value="lowest">Lowest</option>
                   <option value="highest">Highest</option>
                 </select>
                 &nbsp; &nbsp;
                 <b>Filter by Size</b> :&nbsp; &nbsp;
                 <select
-                  className=" col-sm-1"
+                  className=" col-sm-2"
                   value={this.props.size}
                   onChange={this.props.filterProducts}
                 >
+                  <option disabled>Select one</option>
                   <option value="">ALL</option>
                   <option value="M">M</option>
                   <option value="S">S</option>

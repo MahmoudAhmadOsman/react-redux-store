@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import formatCurrency from "../utils/util";
+import Zoom from "react-reveal/Zoom";
 
 export class Cart extends Component {
   constructor(props) {
@@ -44,7 +45,10 @@ export class Cart extends Component {
           {/* If cart items are equal to 0, cart is empty */}
           {cartItems.length === 0 ? (
             <div cartItems="alert alert-danger">
-              <h5 className="text-danger">Your Cart is empty!</h5>
+              <h5 className="text-danger">
+                <i class="fa fa-shopping-bag mr-2" aria-hidden="true"></i>
+                <small className="text-muted">Empty Bag!</small>
+              </h5>
             </div>
           ) : (
             <div className="container p-2">
@@ -60,6 +64,7 @@ export class Cart extends Component {
           )}
 
           {/* Start of Cart list items */}
+
           <div className="cart-items container">
             <ul className="list-group">
               {cartItems.map((item) => (
@@ -112,46 +117,48 @@ export class Cart extends Component {
                   {this.state.showCheckout && (
                     <div className="checkout-form-container mt-4">
                       <hr />
-                      <h3 className="text-primary">Checkout</h3>
-                      <form onSubmit={this.createOrder}>
-                        <div class="form-group">
-                          <label htmlFor="name">Name</label>
-                          <input
-                            type="text"
-                            name="name"
-                            className="form-control"
-                            required
-                            onChange={this.handleInput}
-                          />
-                        </div>
-                        <div class="form-group">
-                          <label htmlFor="email">Email</label>
-                          <input
-                            type="email"
-                            name="email"
-                            className="form-control"
-                            required
-                            onChange={this.handleInput}
-                          />
-                        </div>
+                      <Zoom>
+                        <h3 className="text-primary">Checkout</h3>
+                        <form onSubmit={this.createOrder}>
+                          <div class="form-group">
+                            <label htmlFor="name">Name</label>
+                            <input
+                              type="text"
+                              name="name"
+                              className="form-control"
+                              required
+                              onChange={this.handleInput}
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input
+                              type="email"
+                              name="email"
+                              className="form-control"
+                              required
+                              onChange={this.handleInput}
+                            />
+                          </div>
 
-                        <div class="form-group">
-                          <label htmlFor="address">Address</label>
-                          <input
-                            type="text"
-                            name="address"
-                            className="form-control"
-                            required
-                            onChange={this.handleInput}
-                          />
-                        </div>
-                        <button
-                          type="submit"
-                          class="btn btn-outline-primary btn-md"
-                        >
-                          Submit
-                        </button>
-                      </form>
+                          <div class="form-group">
+                            <label htmlFor="address">Address</label>
+                            <input
+                              type="text"
+                              name="address"
+                              className="form-control"
+                              required
+                              onChange={this.handleInput}
+                            />
+                          </div>
+                          <button
+                            type="submit"
+                            class="btn btn-outline-primary btn-md"
+                          >
+                            Submit
+                          </button>
+                        </form>
+                      </Zoom>
                     </div>
                   )}
                   {/* End of showing the checkout form */}

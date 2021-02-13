@@ -8,8 +8,7 @@
         "X",
         "L",
         "M",
-        "XL",
-        "XXL"
+        "XL"
       ],
       "price": 27.34,
       "image": "https://source.unsplash.com/1600x900/?shirt"
@@ -22,36 +21,33 @@
         "X",
         "L",
         "M",
-        "XL",
-        "XXL"
+        "XL"
       ],
       "price": 65.87,
-      "image": "https://source.unsplash.com/1600x900/?pant"
+      "image": "https://source.unsplash.com/1600x900/?jeans"
     },
     {
       "id": 3,
-      "title": "Atlas Hooded Jacket",
+      "title": "Hooded Jacket",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
         "X",
         "L",
         "M",
-        "XL",
-        "XXL"
+        "XL"
       ],
       "price": 85.94,
       "image": "https://source.unsplash.com/1600x900/?jaket"
     },
     {
       "id": 4,
-      "title": "Skirt",
+      "title": "Skirts",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.  ",
       "availableSizes": [
         "X",
         "L",
         "M",
-        "XL",
-        "XXL"
+        "XL"
       ],
       "price": 26.13,
       "image": "https://source.unsplash.com/1600x900/?skirt"
@@ -64,17 +60,17 @@
         "L"
       ],
       "price": 599.99,
-      "image": "https://source.unsplash.com/1600x900/?dell"
+      "image": "https://source.unsplash.com/1600x900/?computer"
     },
     {
       "id": 6,
-      "title": "Dell Laptop",
+      "title": "Toshipa Laptop",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. ",
       "availableSizes": [
         "M"
       ],
       "price": 699.95,
-      "image": "https://source.unsplash.com/1600x900/?dell"
+      "image": "https://source.unsplash.com/1600x900/?computer"
     },
     {
       "id": 7,
@@ -82,7 +78,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
         "M",
-        "S"
+        "S",
+        "L"
       ],
       "price": 79.95,
       "image": "https://source.unsplash.com/1600x900/?nike"
@@ -95,7 +92,7 @@
         "M"
       ],
       "price": 579.95,
-      "image": "https://source.unsplash.com/1600x900/?phone11"
+      "image": "https://source.unsplash.com/1600x900/?iPhone"
     },
     {
       "id": 9,
@@ -115,7 +112,18 @@
         "S"
       ],
       "price": 106.95,
-      "image": "https://source.unsplash.com/1600x900/?javascript"
+      "image": "https://source.unsplash.com/1600x900/?html"
+    },
+    {
+      "id": 11,
+      "title": "PHP",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
+      "availableSizes": [
+        "S",
+        "M"
+      ],
+      "price": 106.95,
+      "image": "https://source.unsplash.com/1600x900/?php"
     }
   ]
 }

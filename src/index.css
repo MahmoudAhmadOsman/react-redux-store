@@ -57,6 +57,19 @@
    float: right;
  }
 
+ .cart-items .fa-cart-plus {
+   background-color: #000000ab;
+   color: #fff;
+   border-radius: 50px;
+   font-size: 25px;
+   height: 40px;
+   width: 40px;
+   line-height: 40px;
+   text-align: center;
+ }
+
+
+
  .cart-items .badge-danger {
    border-radius: 50px;
    border-radius: 50px;
@@ -67,8 +80,8 @@
  }
 
  .cart-items img {
-   width: 30px;
-   height: 30px;
+   width: 40px;
+   height: 40px;
    border-radius: 50px;
    display: flex;
    float: left;
@@ -112,11 +125,23 @@
 
  /* Checkout form container */
 
- .checkout-form-container{
+ .checkout-form-container {
    position: relative;
  }
- .checkout-form-container label{
+
+ .checkout-form-container label {
    font-weight: bold;
+ }
+
+
+ /* Product details Modal style */
+ .product-details {
+   position: relative;
+ }
+
+ .product-details img {
+   width: 100%;
+
  }
 
  /* Footer */
