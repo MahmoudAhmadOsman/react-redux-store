@@ -78,7 +78,11 @@ class Products extends Component {
             {product && (
               <Modal isOpen={true} onRequestClose={this.closeModal}>
                 <Zoom>
-                  <button className="btn btn-danger" onClick={this.closeModal}>
+                  <button
+                    className="btn btn-danger"
+                    onClick={this.closeModal}
+                    style={{ float: "right" }}
+                  >
                     <i class="fa fa-times" aria-hidden="true"></i>
                   </button>
                   <div className="product-details">
