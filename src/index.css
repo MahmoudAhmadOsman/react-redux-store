@@ -79,6 +79,15 @@
    margin-left: -4px;
  }
 
+ .cart-items .badge-success {
+   border-radius: 50px;
+   border-radius: 50px;
+   font-size: 11px;
+   margin-top: 4px;
+   position: absolute;
+   margin-left: -4px;
+ }
+
  .cart-items img {
    width: 40px;
    height: 40px;

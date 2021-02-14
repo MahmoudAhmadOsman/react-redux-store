@@ -46,8 +46,11 @@ export class Cart extends Component {
           {cartItems.length === 0 ? (
             <div cartItems="alert alert-danger">
               <h5 className="text-danger">
-                <i class="fa fa-shopping-bag mr-2" aria-hidden="true"></i>
-                <small className="text-muted">Empty Bag!</small>
+                <i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i>
+                <small className="text-muted">
+                  <b className="badge badge-danger">{cartItems.length}</b>
+                  {/* Empty pack or cart */}
+                </small>
               </h5>
             </div>
           ) : (
@@ -58,7 +61,7 @@ export class Cart extends Component {
                 in your cart. */}
                 <i class="fa fa-cart-plus fa-2x " aria-hidden="true"></i>
 
-                <b className="badge badge-danger">{cartItems.length}</b>
+                <b className="badge badge-success">{cartItems.length}</b>
               </h4>
             </div>
           )}
