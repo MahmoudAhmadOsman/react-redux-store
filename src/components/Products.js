@@ -105,7 +105,7 @@ class Products extends Component {
                               {formatCurrency(product.price)}
                             </span>
                           </h1>
-                          <h3 className="mr-3">
+                          <h3 className="text-muted mr-3">
                             Avaiable Sizes:
                             {product.availableSizes.map((closeTheModal) => (
                               <span>
@@ -118,6 +118,16 @@ class Products extends Component {
                               </span>
                             ))}
                           </h3>
+                          <div className="starts-reviews">
+                            <p>
+                              Stars | {product.starts}
+                              {product.stars.map((star) => (
+                                <i class="fa fa-star ml-1" aria-hidden="true">
+                                  {product.star}
+                                </i>
+                              ))}
+                            </p>
+                          </div>
 
                           <hr />
                           <div className="description text-muted">

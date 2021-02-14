@@ -76,9 +76,15 @@ export class Cart extends Component {
                     <img src={item.image} alt={item.title} />
                   </div>
                   <div className="item-title">
-                    <p className="text-muted ml-3">{item.title}</p>
+                    <p className="text-muted font-weight-bold ml-3">
+                      {item.title}
+                    </p>
                   </div>
-
+                  <div className="item-description">
+                    <p className="text-muted">
+                      {item.description.slice(0, 20)}...
+                    </p>
+                  </div>
                   <div className="item-price">
                     <small className="text-muted ml-1">
                       {/* ${item.price} */}

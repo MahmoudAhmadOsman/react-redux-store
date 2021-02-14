@@ -160,6 +160,11 @@
    padding: 3px 0px;
  }
 
+ .product-details .starts-reviews i{
+   color: rgba(241, 238, 38, 0.87);
+    
+ }
+
  /* Footer */
  .footer {
    background-color: rgb(51, 50, 50);
