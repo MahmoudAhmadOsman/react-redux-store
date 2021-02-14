@@ -95,7 +95,13 @@ class Products extends Component {
 
                         <div className="col-md-6">
                           <h1>{product.title}</h1>
-                          <p>{product.description}</p>
+
+                          <h1 className="text-dark">
+                            Price: &nbsp;
+                            <span className="text-danger">
+                              {formatCurrency(product.price)}
+                            </span>
+                          </h1>
                           <h3 className="mr-3">
                             Avaiable Sizes:
                             {product.availableSizes.map((closeTheModal) => (
@@ -110,12 +116,11 @@ class Products extends Component {
                             ))}
                           </h3>
 
-                          <h1 className="text-dark">
-                            Price: &nbsp;
-                            <span className="text-danger">
-                              {formatCurrency(product.price)}
-                            </span>
-                          </h1>
+                          <hr />
+                          <div className="description text-muted">
+                            <h4>Description</h4>
+                            <p>{product.description}</p>
+                          </div>
                           <button
                             className="btn btn-outline-warning btn-lg font-weight-bold"
                             onClick={() => {
