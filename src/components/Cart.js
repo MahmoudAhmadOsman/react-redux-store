@@ -30,6 +30,7 @@ export class Cart extends Component {
       email: this.state.email,
       address: this.state.address,
       cartItems: this.props.cartItems, // include cart items here
+      isLoading: this.props.isLoading,
     };
     //Now save the order and pass this info to the parent component which is App.js
     this.props.createOrder(order);
@@ -41,7 +42,7 @@ export class Cart extends Component {
 
     return (
       <section className="cart-items">
-        <div className="">
+        <div className="container">
           {/* If cart items are equal to 0, cart is empty */}
           {cartItems.length === 0 ? (
             <div cartItems="alert alert-danger">

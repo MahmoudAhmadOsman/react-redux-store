@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import formatCurrency from "../utils/util";
 
 import Modal from "react-modal";
 
 import Zoom from "react-reveal/Zoom";
+import Loading from "./Loading";
 
 class Products extends Component {
   // Product Modal
@@ -12,6 +13,7 @@ class Products extends Component {
     super(props);
     this.state = {
       product: null,
+      //isLoading: true,
     };
   }
 
@@ -28,9 +30,23 @@ class Products extends Component {
   render() {
     const productTitles = "Products";
     const { product } = this.state;
+    // const { isLoading } = this.state;
+
     return (
       <section className="all_products">
         <div className="container">
+          {/* Start of isLoading */}
+          {/* {isLoading ? (
+            <div>
+              <Loading />
+            </div>
+          ) : (
+            <div className="alert alert-danger">
+              {this.state.setState({ isLoading: true })} 
+              
+            </div>
+          )} */}
+          {/* End of isLoading */}
           <h1 className="text-info">{productTitles}</h1> <hr /> <br />
           <div className="row">
             {this.props.products.map((product) => (

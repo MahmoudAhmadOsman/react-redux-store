@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/About";
@@ -12,8 +12,11 @@ import Products from "./components/Products";
 
 import data from "./data.json";
 class App extends React.Component {
+  //const { isLoading } = useState(false);
+
   constructor() {
     super();
+
     this.state = {
       products: data.products,
       // cartItems: [],
@@ -23,6 +26,7 @@ class App extends React.Component {
         : [],
       size: "",
       sort: "",
+      isLoading: false,
     };
   }
 
@@ -157,11 +161,13 @@ class App extends React.Component {
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
                 createOrder={this.createOrder}
+                isLoading={this.isLoading}
               />
             </div>
             {/* End of Cart Component */}
 
             {/* Start of Product Component */}
+
             <Products
               products={this.state.products}
               addToCart={this.addToCart}
