@@ -88,6 +88,10 @@ class Products extends Component {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Start of the 2nd container  */}
+        <div className="container">
           <div className="row">
             {/* Start of Modal */}
             {product && (
@@ -178,6 +182,7 @@ class Products extends Component {
             {/* End of Modal */}
           </div>
         </div>
+        {/* End of the 2nd container  */}
       </section>
     );
   }
