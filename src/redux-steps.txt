@@ -1,0 +1,16 @@
+ ============= Redux Steps ===============
+ npm install redux, react-redux & redux-thunk
+ import redux
+ create types 
+ types.js -> inside component folder
+ define FETCH_PRODUCTS
+ actions/productActions.js
+ declare fetchProducts
+ create reducers
+ reducers/productReducers.js
+ define case FETCH_PRODUCTS
+ create store
+
+import store 
+
+wrap all in Provider in App.js

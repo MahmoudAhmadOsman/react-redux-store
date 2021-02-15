@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import store from "./store";
+import { Provider } from "react-redux";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/About";
@@ -127,57 +129,59 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <section classNameName="main-content">
-          <NavBar />
-          <Switch>
-            {/* <Route exact path="/">
+      <Provider store={store}>
+        <Router>
+          <section classNameName="main-content">
+            <NavBar />
+            <Switch>
+              {/* <Route exact path="/">
               <Home />
             </Route> */}
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-          </Switch>
-          <div className="front-page">
-            <div className="main-filter mt-2">
-              {/*1. Filter component: pass props here to access in Filter component */}
-              {/*2. Define properties for the filter selected items */}
-              {/*3. The, define functions that handles when items are selected */}
-              <Filter
-                count={this.state.products.length}
-                size={this.state.size}
-                sort={this.state.sort}
-                filterProducts={this.filterProducts}
-                sortProducts={this.sortProducts}
-              ></Filter>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+            </Switch>
+            <div className="front-page">
+              <div className="main-filter mt-2">
+                {/*1. Filter component: pass props here to access in Filter component */}
+                {/*2. Define properties for the filter selected items */}
+                {/*3. The, define functions that handles when items are selected */}
+                <Filter
+                  count={this.state.products.length}
+                  size={this.state.size}
+                  sort={this.state.sort}
+                  filterProducts={this.filterProducts}
+                  sortProducts={this.sortProducts}
+                ></Filter>
+              </div>
+              {/* Start of Cart Component */}
+              <div className="alert">
+                {/* Pass cartItems to the cart component as props */}
+                <Cart
+                  cartItems={this.state.cartItems}
+                  removeFromCart={this.removeFromCart}
+                  createOrder={this.createOrder}
+                  isLoading={this.isLoading}
+                />
+              </div>
+              {/* End of Cart Component */}
+
+              {/* Start of Product Component */}
+
+              <Products
+                products={this.state.products}
+                addToCart={this.addToCart}
+              ></Products>
+
+              {/* End of Product Component */}
             </div>
-            {/* Start of Cart Component */}
-            <div className="alert">
-              {/* Pass cartItems to the cart component as props */}
-              <Cart
-                cartItems={this.state.cartItems}
-                removeFromCart={this.removeFromCart}
-                createOrder={this.createOrder}
-                isLoading={this.isLoading}
-              />
-            </div>
-            {/* End of Cart Component */}
-
-            {/* Start of Product Component */}
-
-            <Products
-              products={this.state.products}
-              addToCart={this.addToCart}
-            ></Products>
-
-            {/* End of Product Component */}
-          </div>
-        </section>
-        <Footer />
-      </Router>
+          </section>
+          <Footer />
+        </Router>
+      </Provider>
     );
   }
 }

@@ -1,10 +1,13 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
+
 import { Link } from "react-router-dom";
 import formatCurrency from "../utils/util";
 
 import Modal from "react-modal";
 
 import Zoom from "react-reveal/Zoom";
+import { connect } from "react-redux";
+import { fetchProducts } from "../actions/productActions";
 import Loading from "./Loading";
 
 class Products extends Component {
@@ -13,8 +16,12 @@ class Products extends Component {
     super(props);
     this.state = {
       product: null,
-      //isLoading: true,
     };
+  }
+
+  //Now fetch the product from backen using componentDidMount function
+  componentDidMount() {
+    this.props.fetchProducts(); //Call the fetch products
   }
 
   //Open the Modal
@@ -30,66 +37,58 @@ class Products extends Component {
   render() {
     const productTitles = "Products";
     const { product } = this.state;
-    // const { isLoading } = this.state;
 
     return (
       <section className="all_products">
         <div className="container">
-          {/* Start of isLoading */}
-          {/* {isLoading ? (
-            <div>
-              <Loading />
-            </div>
-          ) : (
-            <div className="alert alert-danger">
-              {this.state.setState({ isLoading: true })} 
-              
-            </div>
-          )} */}
-          {/* End of isLoading */}
           <h1 className="text-info">{productTitles}</h1> <hr /> <br />
-          <div className="row">
-            {this.props.products.map((product) => (
-              <Zoom>
-                <div className="col-md-4">
-                  <div className="card" key={product.id}>
-                    <Link
-                      to={"#" + product.id}
-                      onClick={() => this.openModal(product)}
-                    >
-                      <img
-                        className="card-img-top"
-                        src={product.image}
-                        alt={product.title}
-                      />
-                    </Link>
-
-                    <div className="card-body">
-                      <h4 className="card-title">
-                        {product.title} &nbsp;
-                        {/* <span className="text-muted"></span> */}
-                        &nbsp;
-                        {/* <b className="text-danger">${product.price}</b> */}
-                      </h4>
-                      <hr />
-                      <p className="card-text">{product.description}</p>
-                      <button className="disabled btn btn-secondary btn-lg mr-2 font-weight-bold">
-                        {formatCurrency(product.price)}
-                      </button>
-
+          {!this.props.products ? (
+            <Loading />
+          ) : (
+            <div className="">
+              {this.props.products.map((product) => (
+                <Zoom>
+                  <div className="col-md-4">
+                    <div className="card" key={product.id}>
                       <Link
                         to={"#" + product.id}
-                        className="btn btn-outline-warning btn-lg font-weight-bold"
-                        onClick={() => this.props.addToCart(product)}
+                        onClick={() => this.openModal(product)}
                       >
-                        Add to Cart
+                        <img
+                          className="card-img-top"
+                          src={product.image}
+                          alt={product.title}
+                        />
                       </Link>
+
+                      <div className="card-body">
+                        <h4 className="card-title">
+                          {product.title} &nbsp;
+                          {/* <span className="text-muted"></span> */}
+                          &nbsp;
+                          {/* <b className="text-danger">${product.price}</b> */}
+                        </h4>
+                        <hr />
+                        <p className="card-text">{product.description}</p>
+                        <button className="disabled btn btn-secondary btn-lg mr-2 font-weight-bold">
+                          {formatCurrency(product.price)}
+                        </button>
+
+                        <Link
+                          to={"#" + product.id}
+                          className="btn btn-outline-warning btn-lg font-weight-bold"
+                          onClick={() => this.props.addToCart(product)}
+                        >
+                          Add to Cart
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Zoom>
-            ))}
-
+                </Zoom>
+              ))}
+            </div>
+          )}
+          <div className="row">
             {/* Start of Modal */}
             {product && (
               <Modal isOpen={true} onRequestClose={this.closeModal}>
@@ -184,4 +183,6 @@ class Products extends Component {
   }
 }
 
-export default Products;
+export default connect((state) => ({ products: state.products.items }), {
+  fetchProducts,
+})(Products);
