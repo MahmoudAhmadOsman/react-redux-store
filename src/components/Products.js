@@ -45,7 +45,7 @@ class Products extends Component {
           {!this.props.products ? (
             <Loading />
           ) : (
-            <div className="">
+            <div className="row">
               {this.props.products.map((product) => (
                 <Zoom>
                   <div className="col-md-4">
