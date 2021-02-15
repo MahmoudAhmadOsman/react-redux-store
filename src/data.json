@@ -85,7 +85,8 @@
       "title": "Dell Computer",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
-        "L"
+        "L",
+        "M"
       ],
       "price": 599.99,
       "image": "https://source.unsplash.com/1600x900/?computer",
@@ -138,7 +139,8 @@
       "title": "iPhone",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.",
       "availableSizes": [
-        "M"
+        "M",
+        "L"
       ],
       "price": 579.95,
       "image": "https://source.unsplash.com/1600x900/?iPhone",
@@ -155,7 +157,8 @@
       "title": "JavaScript",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
-        "S"
+        "S",
+        "M"
       ],
       "price": 86.95,
       "image": "https://source.unsplash.com/1600x900/?javascript",
@@ -172,7 +175,8 @@
       "title": "React js",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.  ",
       "availableSizes": [
-        "S"
+        "S",
+        "L"
       ],
       "price": 106.95,
       "image": "https://source.unsplash.com/1600x900/?html",

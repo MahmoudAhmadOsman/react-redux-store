@@ -18,7 +18,7 @@ class Filter extends Component {
                 >
                   &nbsp;
                   <option disabled>Select one</option>
-                  <option>Lowest</option>
+                  <option>Latest</option>
                   <option value="lowest">Lowest</option>
                   <option value="highest">Highest</option>
                 </select>
@@ -34,7 +34,6 @@ class Filter extends Component {
                   <option value="M">M</option>
                   <option value="S">S</option>
                   <option value="L">L</option>
-                  <option value="XXL">XXL</option>
                 </select>
               </div>
             </div>
