@@ -4,9 +4,12 @@ import {
   ORDER_PRODUCTS_BY_PRICE,
 } from "../types";
 //st:2
+
+//================ ALL ACTIONS
 export const fetchProducts = () => async (dispatch) => {
   //get data from the backend/server
-  const res = await fetch("/api/products");
+  // const res = await fetch("/api/products");
+  const res = await fetch("https://custom-states-api.herokuapp.com/products");
 
   //Assign the data to res variable after converting into JSON
   const data = await res.json();

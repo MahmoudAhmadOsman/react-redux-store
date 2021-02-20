@@ -51,7 +51,7 @@ class Products extends Component {
                   <div className="col-md-4">
                     <div className="card" key={product.id}>
                       <Link
-                        to={"#" + product.id}
+                        to={"/products/" + product.id}
                         onClick={() => this.openModal(product)}
                       >
                         <img
@@ -75,7 +75,7 @@ class Products extends Component {
                         </button>
 
                         <Link
-                          to={"#" + product.id}
+                          to={"/products/" + product.id}
                           className="btn btn-outline-warning btn-lg font-weight-bold"
                           onClick={() => this.props.addToCart(product)}
                         >
