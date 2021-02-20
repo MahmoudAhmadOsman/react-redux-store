@@ -1,8 +1,8 @@
- ============= Redux Steps ===============
+ ============= Redux ===============
  npm install redux, react-redux & redux-thunk
  import redux
  create types 
- types.js -> inside component folder
+ types.js -> inside root
  define FETCH_PRODUCTS
  actions/productActions.js
  declare fetchProducts

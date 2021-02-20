@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Products from "./components/Products";
 
-import data from "./data.json";
+// import data from "./data.json";
 class App extends React.Component {
   //const { isLoading } = useState(false);
 
@@ -20,14 +20,14 @@ class App extends React.Component {
     super();
 
     this.state = {
-      products: data.products,
+      //products: data.products,
       // cartItems: [],
       //2.Prevent lossing items after page is refreshed by using local storage
       cartItems: localStorage.getItem("cartItems")
         ? JSON.parse(localStorage.getItem("cartItems"))
         : [],
-      size: "",
-      sort: "",
+      // size: "",
+      // sort: "",
       isLoading: false,
     };
   }
@@ -82,50 +82,52 @@ class App extends React.Component {
   };
 
   //filterProducts function
-  filterProducts = (event) => {
-    console.log("Sort products", event.target.value);
-    console.log(event.target.value);
-    if (event.target.value === "") {
-      this.setState({
-        size: event.target.value,
-        product: data.products,
-      });
-    } else {
-      this.setState({
-        size: event.target.value,
-        products: data.products.filter(
-          (product) => product.availableSizes.indexOf(event.target.value) >= 0
-        ),
-      });
-    }
-  };
+  //Moved to ProductAction
+  // filterProducts = (event) => {
+  //   console.log("Sort products", event.target.value);
+  //   console.log(event.target.value);
+  //   if (event.target.value === "") {
+  //     this.setState({
+  //       size: event.target.value,
+  //       product: data.products,
+  //     });
+  //   } else {
+  //     this.setState({
+  //       size: event.target.value,
+  //       products: data.products.filter(
+  //         (product) => product.availableSizes.indexOf(event.target.value) >= 0
+  //       ),
+  //     });
+  //   }
+  // };
 
   //sortProducts or size
-  sortProducts = (event) => {
-    //console.log(event.target.value);
-    //Create a varibe to chech the sort later
-    const sort = event.target.value;
+  //Moved to ProductAction
+  // sortProducts = (event) => {
+  //   //console.log(event.target.value);
+  //   //Create a varibe to chec the sort later
+  //   const sort = event.target.value;
 
-    //SetState(get the current state)
-    this.setState((state) => ({
-      sort: sort,
-      products: this.state.products
-        .slice()
-        .sort((a, b) =>
-          sort === "lowest"
-            ? a.price > b.price
-              ? 1
-              : -1
-            : sort === "highest"
-            ? a.price < b.price
-              ? 1
-              : -1
-            : a.id < b.id
-            ? 1
-            : -1
-        ),
-    }));
-  };
+  //   //SetState(get the current state)
+  //   this.setState((state) => ({
+  //     sort: sort,
+  //     products: this.state.products
+  //       .slice()
+  //       .sort((a, b) =>
+  //         sort === "lowest"
+  //           ? a.price > b.price
+  //             ? 1
+  //             : -1
+  //           : sort === "highest"
+  //           ? a.price < b.price
+  //             ? 1
+  //             : -1
+  //           : a.id < b.id
+  //           ? 1
+  //           : -1
+  //       ),
+  //   }));
+  // };
 
   render() {
     return (
@@ -149,13 +151,16 @@ class App extends React.Component {
                 {/*1. Filter component: pass props here to access in Filter component */}
                 {/*2. Define properties for the filter selected items */}
                 {/*3. The, define functions that handles when items are selected */}
-                <Filter
+                {/*Now  All of the product properties will come form Redux store */}
+                {/* <Filter
                   count={this.state.products.length}
                   size={this.state.size}
                   sort={this.state.sort}
                   filterProducts={this.filterProducts}
                   sortProducts={this.sortProducts}
-                ></Filter>
+                ></Filter> */}
+
+                <Filter></Filter>
               </div>
               {/* Start of Cart Component */}
               <div className="alert">
@@ -170,11 +175,12 @@ class App extends React.Component {
               {/* End of Cart Component */}
 
               {/* Start of Product Component */}
-
-              <Products
+              {/* <Products
                 products={this.state.products}
                 addToCart={this.addToCart}
-              ></Products>
+              ></Products> */}
+              {/*Now  All of the product properties will come form Redux store */}
+              <Products addToCart={this.addToCart}></Products>
 
               {/* End of Product Component */}
             </div>
