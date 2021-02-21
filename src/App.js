@@ -3,9 +3,11 @@ import store from "./store";
 import { Provider } from "react-redux";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import About from "./components/About";
+
 import Cart from "./components/Cart";
-import Contact from "./components/Contact";
+
+import Home from "./components/Home";
+
 import Filter from "./components/Filter";
 import Footer from "./components/Footer";
 
@@ -21,14 +23,8 @@ class App extends React.Component {
           <section classNameName="main-content">
             <NavBar />
             <Switch>
-              {/* <Route exact path="/">
-              <Home />
-            </Route> */}
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/contact">
-                <Contact />
+              <Route exact path="/">
+                <Home />
               </Route>
             </Switch>
             <div className="front-page">

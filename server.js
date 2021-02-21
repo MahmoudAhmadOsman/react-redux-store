@@ -5,15 +5,11 @@ const shortid = require("shortid");
 
 const app = express();
 app.use(bodyParser.json());
-//mongoose.connect("mongodb://localhost:27017/mongodb2020"
-mongoose.connect(
-  "mongodb+srv://myexpress:expresswebapp@cluster0.ux48h.mongodb.net/myexpress?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect("mongodb://localhost:27017/mongodb2020", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 
 //Product Modal or table
 const Product = mongoose.model(
