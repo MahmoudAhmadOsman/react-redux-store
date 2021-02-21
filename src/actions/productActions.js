@@ -10,7 +10,7 @@ export const fetchProducts = () => async (dispatch) => {
   //get data from the backend/server
   // const res = await fetch("/api/products");
   // https://custom-states-api.herokuapp.com/products
-  const res = await fetch("/api/products"); //get data from custom remote api
+  const res = await fetch("https://custom-states-api.herokuapp.com/products"); //get data from custom remote api
 
   //Assign the data to res variable after converting into JSON
   const data = await res.json();
