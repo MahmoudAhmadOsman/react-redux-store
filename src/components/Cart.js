@@ -225,7 +225,10 @@ class Cart extends Component {
                               onChange={this.handleInput}
                             />
                           </div>
-                          <button type="submit" class="btn btn-warning btn-lg">
+                          <button
+                            type="submit"
+                            class="btn btn-warning btn-lg btn-block"
+                          >
                             PLACE ORDER
                           </button>
                         </form>
