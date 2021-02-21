@@ -64,10 +64,7 @@ class Products extends Component {
 
                       <div className="card-body">
                         <h4 className="card-title">
-                          {product.title} &nbsp;
-                          {/* <span className="text-muted"></span> */}
-                          &nbsp;
-                          {/* <b className="text-danger">${product.price}</b> */}
+                          {product.title} &nbsp; &nbsp;
                         </h4>
                         <hr />
                         <p className="card-text">{product.description}</p>

@@ -125,11 +125,7 @@ class Cart extends Component {
           ) : (
             <div className="container p-2">
               <h4>
-                {/* You have{" "}
-                <b className="badge badge-danger">{cartItems.length}</b> items
-                in your cart. */}
                 <i class="fa fa-cart-plus fa-2x " aria-hidden="true"></i>
-
                 <b className="badge badge-success">{cartItems.length}</b>
               </h4>
             </div>
