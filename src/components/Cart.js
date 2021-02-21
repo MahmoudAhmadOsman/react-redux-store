@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import formatCurrency from "../utils/util";
 import Zoom from "react-reveal/Zoom";
+import Modal from "react-modal";
 import { connect } from "react-redux";
 import { removeFromCart } from "../actions/cartActions";
+import { createOrder, clearOrder } from "../actions/orderActions";
 
 class Cart extends Component {
   constructor(props) {
@@ -32,19 +34,83 @@ class Cart extends Component {
       email: this.state.email,
       address: this.state.address,
       cartItems: this.props.cartItems, // include cart items here
-      isLoading: this.props.isLoading,
+      total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
+      //isLoading: this.props.isLoading,
     };
+
     //Now save the order and pass this info to the parent component which is App.js
     this.props.createOrder(order);
   };
-
+  closeModal = () => {
+    this.props.clearOrder();
+  };
   render() {
     //1st, Get the props
-    const { cartItems } = this.props;
+    //Then, show the order
+    const { cartItems, order } = this.props;
 
     return (
       <section className="cart-items">
         <div className="container">
+          {order && (
+            <Modal isOpen={true} onRequestClose={this.closeModal}>
+              <Zoom>
+                <button
+                  className="btn btn-danger mb-2"
+                  onClick={this.closeModal}
+                >
+                  <i className="fa fa-close "></i>
+                </button>
+                <div class="container">
+                  <h3 className="alert alert-success">
+                    <i className="fa fa-check-square text-info mr-3"></i>
+                    Thank You. Your order has been placed!
+                  </h3>
+                  <h2 className="text-primary mb-3">Order Details</h2>
+
+                  <table class="table table-striped mt-3">
+                    <thead>
+                      <tr>
+                        <th>Order Number</th>
+                        <th>Full Name</th>
+                        <th>Email Address</th>
+                        <th>Address</th>
+                        <th>Order Date</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="text-primary">{order.id}</td>
+                        <td>{order.name}</td>
+                        <td>{order.email}</td>
+                        <td>{order.address}</td>
+
+                        <td>
+                          {new Date(order.createdAt).toLocaleDateString()}
+                        </td>
+                        <td>{formatCurrency(order.total)}</td>
+                      </tr>
+                      <div className="card container mt-3">
+                        <h4 className="text-success">Cart Items</h4> <hr />
+                        {order.cartItems.map((x) => (
+                          <div className="row">
+                            <div>
+                              <b>Item Name:</b>{" "}
+                              <small className="text-muted">
+                                {x.count} {" x "} {x.title}
+                              </small>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </tbody>
+                  </table>
+                </div>
+              </Zoom>
+            </Modal>
+          )}
+
           {/* If cart items are equal to 0, cart is empty */}
           {cartItems.length === 0 ? (
             <div cartItems="alert alert-danger">
@@ -102,7 +168,7 @@ class Cart extends Component {
                     Remove
                   </button>
                 </li>
-              ))}{" "}
+              ))}
               {/* Start of total div */}
               {cartItems.length !== 0 && (
                 <div className="total mt-2">
@@ -120,7 +186,7 @@ class Cart extends Component {
                       onClick={() => {
                         this.setState({ showCheckout: true });
                       }}
-                      className="btn btn-warning btn-lg btn-block font-weight-bold"
+                      className="btn btn-outline-success btn-lg btn-block font-weight-bold"
                     >
                       Proceed
                     </button>
@@ -163,11 +229,8 @@ class Cart extends Component {
                               onChange={this.handleInput}
                             />
                           </div>
-                          <button
-                            type="submit"
-                            class="btn btn-outline-primary btn-md"
-                          >
-                            Submit
+                          <button type="submit" class="btn btn-warning btn-lg">
+                            PLACE ORDER
                           </button>
                         </form>
                       </Zoom>
@@ -189,11 +252,17 @@ class Cart extends Component {
 
 export default connect(
   (state) => ({
-    //first props
+    //first prop
+    order: state.order.order,
+    //2nd prop
     cartItems: state.cart.cartItems,
   }),
-  //Now define the cart action
-  { removeFromCart }
+  //Now import CART,  ORDER and CLEAR actions
+  {
+    removeFromCart,
+    createOrder,
+    clearOrder,
+  }
 )(Cart); //(Cart) is the name of the component
 //Now add this reducer in the store.js reducers
 //Then also add Product.js addToCart()
