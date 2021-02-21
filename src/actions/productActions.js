@@ -1,6 +1,6 @@
 import {
   FETCH_PRODUCTS,
-  FITER_PRODUCTS_BY_SIZE,
+  FILER_PRODUCTS_BY_SIZE,
   ORDER_PRODUCTS_BY_PRICE,
 } from "../types";
 //st:2
@@ -9,7 +9,7 @@ import {
 export const fetchProducts = () => async (dispatch) => {
   //get data from the backend/server
   // const res = await fetch("/api/products");
-  const res = await fetch("https://custom-states-api.herokuapp.com/products");
+  const res = await fetch("https://custom-states-api.herokuapp.com/products"); //get data from custom remote api
 
   //Assign the data to res variable after converting into JSON
   const data = await res.json();
@@ -23,12 +23,12 @@ export const fetchProducts = () => async (dispatch) => {
   });
 };
 
-//FITER_PRODUCTS_BY_SIZE & ORDER_PRODUCTS_BY_PRICE types
+//FILER_PRODUCTS_BY_SIZE & ORDER_PRODUCTS_BY_PRICE types
 
-//FITER_PRODUCTS_BY_SIZE function
+//FILER_PRODUCTS_BY_SIZE function
 export const filterProducts = (products, size) => (dispatch) => {
   dispatch({
-    type: FITER_PRODUCTS_BY_SIZE,
+    type: FILER_PRODUCTS_BY_SIZE,
     payload: {
       size: size,
       items:

@@ -1,13 +1,13 @@
 // //st:3
 import {
   FETCH_PRODUCTS,
-  FITER_PRODUCTS_BY_SIZE,
+  FILER_PRODUCTS_BY_SIZE,
   ORDER_PRODUCTS_BY_PRICE,
 } from "../types";
 
 export const productsReducer = (state = {}, action) => {
   switch (action.type) {
-    case FITER_PRODUCTS_BY_SIZE:
+    case FILER_PRODUCTS_BY_SIZE:
       return {
         //return the current state using spread operator
         ...state,

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import formatCurrency from "../utils/util";
 import Zoom from "react-reveal/Zoom";
+import { connect } from "react-redux";
+import { removeFromCart } from "../actions/cartActions";
 
-export class Cart extends Component {
+class Cart extends Component {
   constructor(props) {
     super();
     //Initially set the state to false
@@ -185,4 +187,14 @@ export class Cart extends Component {
   }
 }
 
-export default Cart;
+export default connect(
+  (state) => ({
+    //first props
+    cartItems: state.cart.cartItems,
+  }),
+  //Now define the cart action
+  { removeFromCart }
+)(Cart); //(Cart) is the name of the component
+//Now add this reducer in the store.js reducers
+//Then also add Product.js addToCart()
+//Then remove CartItemss props from App.js
