@@ -164,16 +164,6 @@ class Products extends Component {
                             Add to Cart
                           </button>
                         </div>
-
-                        {/* <div className="product-details-description">
-                      
-
-                    
-                      <div className="product-price">
-                       
-                       
-                      </div>
-                    </div> */}
                       </div>
                     </div>
                   </div>
