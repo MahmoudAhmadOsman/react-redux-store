@@ -89,23 +89,39 @@ class Cart extends Component {
                         <td>
                           {new Date(order.createdAt).toLocaleDateString()}
                         </td>
-                        <td>{formatCurrency(order.total)}</td>
+                        <td className="text-danger font-weight-bold">
+                          {formatCurrency(order.total)}
+                        </td>
                       </tr>
-                      <div className="card container mt-3">
-                        <h4 className="text-success">Cart Items</h4> <hr />
-                        {order.cartItems.map((x) => (
-                          <div className="row">
-                            <div>
-                              <b>Item Name:</b>{" "}
-                              <small className="text-muted">
-                                {x.count} {" x "} {x.title}
-                              </small>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
                     </tbody>
                   </table>
+                  <div className="d-block mt-3">
+                    <h4 className="text-danger">Cart Details</h4> <hr />
+                    {order.cartItems.map((x) => (
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>
+                              Number of Items
+                              <span className="badge badge-danger rounded-circle ml-3">
+                                {x.count}
+                              </span>
+                            </th>
+                          </tr>
+                          <tbody>
+                            <td>
+                              {x.count} {" x "} {x.title}
+                            </td>
+
+                            <td>
+                              <b>Price:</b> {formatCurrency(x.price)}{" "}
+                            </td>
+                          </tbody>
+                        </thead>
+                        <hr />
+                      </table>
+                    ))}
+                  </div>
                 </div>
               </Zoom>
             </Modal>
