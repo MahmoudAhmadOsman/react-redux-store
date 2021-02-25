@@ -5,17 +5,14 @@ const shortid = require("shortid");
 
 const app = express();
 app.use(bodyParser.json());
-//mongoose.connect("mongodb://localhost:27017/mongodb2020"
-mongoose.connect(
-  "mongodb+srv://myexpress:expresswebapp@cluster0.ux48h.mongodb.net/myexpress?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  }
-);
 
-//Product Modal or table
+//Database connection string
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongodb2020", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+//Product Model or schema
 const Product = mongoose.model(
   "products",
   new mongoose.Schema({
@@ -94,6 +91,11 @@ app.post("/api/orders", async (req, res) => {
   const order = await Order(req.body).save();
   res.send(order); //Now, send the order
 });
+
+//Check if the connection variable //3
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Serve started at http://localhost:5000"));
