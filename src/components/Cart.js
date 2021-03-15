@@ -211,11 +211,12 @@ class Cart extends Component {
                         <h3 className="text-primary">Checkout</h3>
                         <form onSubmit={this.createOrder}>
                           <div class="form-group">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">Full Name</label>
                             <input
                               type="text"
                               name="name"
-                              className="form-control"
+                              className="form-control form-control-lg"
+                              placeholder="Enter your full name"
                               required
                               onChange={this.handleInput}
                             />
@@ -225,7 +226,8 @@ class Cart extends Component {
                             <input
                               type="email"
                               name="email"
-                              className="form-control"
+                              className="form-control form-control-lg"
+                              placeholder="Enter a valid email"
                               required
                               onChange={this.handleInput}
                             />
@@ -236,14 +238,15 @@ class Cart extends Component {
                             <input
                               type="text"
                               name="address"
-                              className="form-control"
+                              className="form-control form-control-lg"
+                              placeholder="Enter your full address"
                               required
                               onChange={this.handleInput}
                             />
                           </div>
                           <button
                             type="submit"
-                            class="btn btn-warning btn-lg btn-block"
+                            class="btn btn-outline-danger btn-lg btn-block"
                           >
                             PLACE ORDER
                           </button>

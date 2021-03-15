@@ -49,6 +49,17 @@
 
 
  /* Start of Cart item style */
+ .checkout-form-container {
+   position: relative;
+
+ }
+
+ ::placeholder {
+ 
+   color: #615d5d !important;
+
+ }
+
  .cart-items {
    position: relative;
    display: flex;
@@ -100,6 +111,8 @@
  .cart-items .item-title {
    display: flex;
  }
+
+
 
  @media(max-width: 768px) {
    .cart-items {

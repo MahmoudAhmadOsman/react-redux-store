@@ -6,6 +6,9 @@ const shortid = require("shortid");
 const app = express();
 app.use(bodyParser.json());
 
+app.use("/", express.static(__dirname + "/build"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+
 //Database connection string
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongodb2020", {
   useNewUrlParser: true,
@@ -98,4 +101,4 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log("Serve started at http://localhost:5000"));
+app.listen(port, () => console.log(`Serve started at http://localhost:5000`));
