@@ -9,6 +9,11 @@ app.use(bodyParser.json());
 app.use("/", express.static(__dirname + "/build"));
 app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
 
+app.get("*", function (req, res) {
+  //Redirect unsupported route
+  res.redirect("/");
+});
+
 //Database connection string
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongodb2020", {
   useNewUrlParser: true,
