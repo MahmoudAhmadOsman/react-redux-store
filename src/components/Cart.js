@@ -227,7 +227,7 @@ class Cart extends Component {
                               type="email"
                               name="email"
                               className="form-control form-control-lg"
-                              placeholder="Enter a valid email"
+                              placeholder="Enter a valid email address"
                               required
                               onChange={this.handleInput}
                             />
