@@ -74,7 +74,7 @@ class Products extends Component {
 
                         <Link
                           to={"/products/" + product.id}
-                          className="btn btn-outline-warning btn-lg font-weight-bold"
+                          className="btn btn-outline-danger btn-lg font-weight-bold"
                           onClick={() => this.props.addToCart(product)}
                         >
                           Add to Cart
@@ -152,7 +152,7 @@ class Products extends Component {
                             <p>{product.description}</p>
                           </div>
                           <button
-                            className="btn btn-outline-warning btn-lg font-weight-bold"
+                            className="btn btn-outline-danger btn-lg font-weight-bold"
                             onClick={() => {
                               this.props.addToCart(product);
                               this.closeModal();
