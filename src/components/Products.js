@@ -20,9 +20,9 @@ class Products extends Component {
     };
   }
 
-  //Now fetch the product from backen using componentDidMount function
+  //1. Now fetch the product from backend using componentDidMount lifecycle method as soon as the component loads
   componentDidMount() {
-    this.props.fetchProducts(); //Call the fetch products
+    this.props.fetchProducts(); //Call the fetch product dispatch action
   }
 
   //Open the Modal
