@@ -17,7 +17,7 @@ export const fetchProducts = () => async (dispatch) => {
   console.log(data);
 
   //Now dispatch the action using dispatch function
-  // dispatch(arg1, arg2)
+  // dispatch takes(arg1, arg2)
   dispatch({
     type: FETCH_PRODUCTS,
     payload: data,
