@@ -14,6 +14,8 @@ export const productsReducer = (state = {}, action) => {
         size: action.payload.size,
         filteredItems: action.payload.items,
       };
+      
+      //Order Product action
     case ORDER_PRODUCTS_BY_PRICE:
       return {
         //return the current stateusing spread operator
@@ -22,8 +24,12 @@ export const productsReducer = (state = {}, action) => {
         filteredItems: action.payload.items,
       };
 
+      
+      //Fetch Product action
     case FETCH_PRODUCTS:
       return { items: action.payload, filteredItems: action.payload };
+      
+      
     default:
       return state;
   }
