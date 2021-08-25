@@ -36,7 +36,7 @@ class App extends React.Component {
                 <Cart />
               </div>
 
-              {/*Now  All of the product properties will come form Redux store */}
+              {/*Now  All of the product properties will come from Redux store */}
               <Products></Products>
 
               {/* End of Product Component */}
